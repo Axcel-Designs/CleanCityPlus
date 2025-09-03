@@ -1,0 +1,34 @@
+import Header from "@/components/Header";
+import "./globals.css";
+import Footer from "@/components/Footer";
+import GoTop from "@/components/ui/GoTop";
+
+export const metadata = {
+  title: "CleanCity+",
+  description: "Interactive Waste Management Tracker",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="icon" href="/axcelimg.png" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+          integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </head>
+      <body >
+        <div className="flex flex-col justify-between min-h-screen w-full">
+          <Header />
+          <div className="grow overflow-x-hidden">{children}</div>
+          <GoTop />
+          <Footer />
+        </div>
+      </body>
+    </html>
+  );
+}
