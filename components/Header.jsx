@@ -2,28 +2,29 @@
 import useIsActive from "@/hooks/isActiveHook";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import { FaRecycle, FaHome, FaBars, FaTimes } from "react-icons/fa";
+import { FaHandHoldingDollar, FaTableList } from "react-icons/fa6";
 
 const navBar = [
   {
     label: "Home",
     path: "/",
-    icon: <i className="fa-solid fa-house fa-lg"></i>,
+    icon: <FaHome size="1.25em" />,
   },
   {
     label: "Waste Categories",
     path: "/wasteCategories",
-    icon: <i className="fa-solid fa-table-list fa-lg"></i>,
+    icon: <FaTableList size="1.25em" />,
   },
   {
     label: " Recycling Tracker",
     path: "/recyclingTracker",
-    icon: <i className="fa-solid fa-recycle fa-lg"></i>,
+    icon: <FaRecycle size="1.25em" />,
   },
   {
     label: "Pledge",
     path: "/pledge",
-    icon: <i className="fa-solid fa-hand-holding-dollar fa-lg"></i>,
+    icon: <FaHandHoldingDollar size="1.25em" />,
   },
 ];
 
@@ -67,10 +68,11 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-4">
           <Navbar />
         </nav>
-        <div className="hidden max-md:flex" onClick={tggleActive}>
-          <i
-            className={`fa-solid fa-xl ${isActive ? "fa-times" : "fa-bars"}`}
-          ></i>
+        <div
+          className="point hidden max-md:flex text-2xl"
+          onClick={tggleActive}
+        >
+          {isActive ? <FaTimes /> : <FaBars />}
         </div>
       </header>
       {isActive && (
