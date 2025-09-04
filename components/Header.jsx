@@ -47,7 +47,7 @@ export function Navbar() {
           </div>
         </Link>
       ))}
-    </>https://cleancity-plus.vercel.app/
+    </>
   );
 }
 
