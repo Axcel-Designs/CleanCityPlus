@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/axcelimg.png" />
+        <link rel="icon" href="/cleanCity.png" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           referrerPolicy="no-referrer"
         />
       </head>
-      <body >
+      <body>
         <div className="flex flex-col justify-between min-h-screen w-full">
           <Header />
           <div className="grow overflow-x-hidden">{children}</div>
