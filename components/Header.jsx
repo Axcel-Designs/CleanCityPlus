@@ -35,8 +35,10 @@ export function Navbar() {
         <Link
           href={menu.path}
           key={i}
-          className={`hover:bg-blue-100 hover:text-blue-900 p-2 rounded-lg ${
-            menu.path === path ? "font-bold text-blue-950" : "text-gray-700"
+          className={`hover:text-blue-900 p-2 ${
+            menu.path === path
+              ? "font-bold text-blue-950 border-b-2 border-red-600"
+              : "text-gray-700"
           }`}
         >
           <div className="flex items-center gap-2">
@@ -45,7 +47,7 @@ export function Navbar() {
           </div>
         </Link>
       ))}
-    </>
+    </>https://cleancity-plus.vercel.app/
   );
 }
 
