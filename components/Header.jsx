@@ -36,10 +36,10 @@ export function Navbar() {
         <Link
           href={menu.path}
           key={i}
-          className={`hover:text-blue-900 p-2 ${
+          className={`hover:text-green-700 p-2 ${
             menu.path === path
-              ? "font-bold text-blue-950 border-b-2 border-red-600"
-              : "text-gray-700"
+              ? "font-bold text-green-950 border-b-2 border-red-600"
+              : "text-green-800"
           }`}
         >
           <div className="flex items-center gap-2">
@@ -57,7 +57,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex items-center justify-between p-4 md:p-8 gap-2 shadow-lg/20">
+      <header className="flex items-center justify-between p-4 md:p-8 gap-2 shadow-lg/20 bg-green-50">
         <div className="flex items-center">
           <div className="rounded-full flex justify-around items-center text-center border-gray-400">
             <Link href={"/"}>
