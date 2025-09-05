@@ -1,5 +1,5 @@
 "use client";
-import useIsActive from "@/hooks/isActiveHook";
+import useShow from "@/hooks/isShowHook";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaRecycle, FaHome, FaBars, FaTimes } from "react-icons/fa";
@@ -12,13 +12,13 @@ const navBar = [
     icon: <FaHome size="1.25em" />,
   },
   {
-    label: "Waste Categories",
-    path: "/wasteCategories",
+    label: "Waste",
+    path: "/waste",
     icon: <FaTableList size="1.25em" />,
   },
   {
-    label: " Recycling Tracker",
-    path: "/recyclingTracker",
+    label: " Recycling",
+    path: "/recycling",
     icon: <FaRecycle size="1.25em" />,
   },
   {
@@ -53,7 +53,7 @@ export function Navbar() {
 }
 
 export default function Header() {
-  const { isActive, tggleActive } = useIsActive();
+  const { isShow, tggleActive } = useShow();
 
   return (
     <>
@@ -69,13 +69,13 @@ export default function Header() {
           <Navbar />
         </nav>
         <div
-          className="point hidden max-md:flex text-2xl"
+          className="point hidden max-md:flex text-2xl text-green-950"
           onClick={tggleActive}
         >
-          {isActive ? <FaTimes /> : <FaBars />}
+          {isShow ? <FaTimes /> : <FaBars />}
         </div>
       </header>
-      {isActive && (
+      {isShow && (
         <nav className="md:hidden flex justify-end p-2 " onClick={tggleActive}>
           <div className="flex flex-col gap-4 mr-4">
             <Navbar />
