@@ -57,7 +57,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex items-center justify-between p-4 md:p-8 gap-2 shadow-lg/20 bg-green-50">
+      <header className="flex items-center justify-between p-4  gap-2 bg-green-50 border-b-2 border-green-600">
         <div className="flex items-center">
           <div className="rounded-full flex justify-around items-center text-center border-gray-400">
             <Link href={"/"}>

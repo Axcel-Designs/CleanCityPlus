@@ -1,7 +1,7 @@
-import React from 'react'
-
 export default function FactGenerator() {
   return (
-    <div>FactGenerator</div>
-  )
+    <div>
+      <h1>Did You Know?</h1>
+    </div>
+  );
 }
