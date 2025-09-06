@@ -1,7 +1,24 @@
+"use client";
 import PledgeForm from "@/components/pledge/PledgeForm";
 import PledgeList from "@/components/pledge/PledgeList";
+import { useEffect, useState } from "react";
+import { FiUsers } from "react-icons/fi";
 
-export default function pledge() {
+export default function PledgePage() {
+  const [pledges, setPledges] = useState([]);
+
+  useEffect(() => {
+    const storedForm = JSON.parse(localStorage.getItem("formLocal"));
+    if (storedForm) {
+      setPledges(Array.isArray(storedForm) ? storedForm : [storedForm]);
+    }
+  }, []);
+
+  function handlePledge(newPledge) {
+    setPledges([...pledges, newPledge]);
+    localStorage.setItem("formLocal", JSON.stringify([...pledges, newPledge]));
+  }
+
   return (
     <main className="container mx-auto my-20">
       <section className="text-center text-gray-800 mb-4 grid gap-2">
@@ -15,8 +32,15 @@ export default function pledge() {
           cleaner future.
         </p>
       </section>
-      <PledgeForm />
-      <PledgeList />
+      <section className="my-4">
+        <div className="flex flex-col items-center gap-2 text-gray-700 bg-blue-200 p-4 w-fit">
+          <FiUsers className="text-4xl text-blue-600" />
+          <p>Total Number of Pledges</p>
+          <p>{pledges.length}</p>
+        </div>
+      </section>
+      <PledgeForm onAddPledge={handlePledge} />
+      <PledgeList pledges={pledges} />
     </main>
   );
 }

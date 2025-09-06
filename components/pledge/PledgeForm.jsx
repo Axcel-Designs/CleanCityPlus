@@ -11,7 +11,7 @@ import {
 } from "react-bootstrap";
 import useShow from "@/hooks/isShowHook";
 
-export default function PledgeForm() {
+export default function PledgeForm({ onAddPledge }) {
   const { isShow, handleClose, handleShow } = useShow();
   const [formData, setFormData] = useState({
     name: "",
@@ -33,8 +33,7 @@ export default function PledgeForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setPledges([...pledges, formData]);
-    localStorage.setItem("formLocal", JSON.stringify([...pledges, formData]));
+    onAddPledge(formData);
     setFormData({ name: "", email: "", pledge: "" });
     handleShow();
   }
@@ -89,28 +88,6 @@ export default function PledgeForm() {
           </ModalHeader>
           <ModalBody>Pledge submitted successfully!</ModalBody>
         </Modal>
-      </div>
-      <div className="my-4">
-        <Table striped="columns">
-          <thead>
-            <tr>
-              <th>#</th>
-              {Object.keys(formData).map((key, i) => (
-                <th key={i}>{key}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {pledges.map((item, i) => (
-              <tr key={i}>
-                <td>{i + 1}</td>
-                {Object.keys(formData).map((value, j) => (
-                  <td key={j}>{item[value]}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </Table>
       </div>
     </>
   );
