@@ -16,9 +16,16 @@ export default function PledgeForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    pledgeText: "",
+    pledge: "",
   });
-const [pledges, setPledges] = useState([]);
+  const [pledges, setPledges] = useState([]);
+
+  useEffect(() => {
+    const storedForm = JSON.parse(localStorage.getItem("formLocal"));
+    if (storedForm) {
+      setPledges(storedForm);
+    }
+  }, []);
 
   function dataForm(e) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -26,17 +33,11 @@ const [pledges, setPledges] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    setPledges((prev) => [...prev, formData])
-    localStorage.setItem("formLocal", JSON.stringify([...prev, formData]));
-    setFormData({ name: "", email: "", pledgeText: "" });
+    setPledges([...pledges, formData]);
+    localStorage.setItem("formLocal", JSON.stringify([...pledges, formData]));
+    setFormData({ name: "", email: "", pledge: "" });
     handleShow();
   }
-  useEffect(() => {
-    const storedForm = JSON.parse(localStorage.getItem("formLocal"));
-    if (storedForm) {
-      setFormData(storedForm);
-    }
-  }, []);
 
   return (
     <>
@@ -65,13 +66,13 @@ const [pledges, setPledges] = useState([]);
             name={"email"}
           />
           <div className="my-4">
-            <label htmlFor={"pledgeText"} className="">
+            <label htmlFor={"pledge"} className="">
               Your Environmental Pledge
             </label>
             <textarea
-              value={formData.pledgeText}
+              value={formData.pledge}
               onChange={dataForm}
-              name="pledgeText"
+              name="pledge"
               className="bg-gray-100 w-full ring hover:ring-green-700 outline-0 resize-none p-2"
               placeholder="I pledge to... (e.g., reduce plastic use, recycle more, use public transport, etc.)"
               rows={4}
@@ -92,28 +93,20 @@ const [pledges, setPledges] = useState([]);
       <div className="my-4">
         <Table striped="columns">
           <thead>
-            {/* <tr>
+            <tr>
               <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr> */}
-            {pledges.map((item, i) => (
-              <tr key={i}>
-                <th>#</th>
-                <th>{item.name}</th>
-                <th>{item.email}</th>
-                <th>{item.pledgeText}</th>
-              </tr>
-            ))}
+              {Object.keys(formData).map((key, i) => (
+                <th key={i}>{key}</th>
+              ))}
+            </tr>
           </thead>
           <tbody>
             {pledges.map((item, i) => (
               <tr key={i}>
                 <td>{i + 1}</td>
-                <td>{item.name}</td>
-                <td>{item.email}</td>
-                <td>{item.pledgeText}</td>
+                {Object.keys(formData).map((value, j) => (
+                  <td key={j}>{item[value]}</td>
+                ))}
               </tr>
             ))}
           </tbody>
