@@ -31,6 +31,7 @@ export default function wasteCategories() {
           </AccordionItem>
         </Accordion>
       </section>
+
     </main>
   );
 }

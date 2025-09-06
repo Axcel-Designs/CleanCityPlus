@@ -31,7 +31,7 @@ export default function FactGenerator() {
   }
 
   return (
-    <div className="w-10/12 mx-auto text-center bg-green-50 p-4 my-4 flex flex-col justify-around items-center gap-4 h-[330px] rounded-2xl shadow-xl">
+    <div className="w-10/12 mx-auto text-center bg-green-50 p-4 my-4 flex flex-col justify-around items-center gap-2 min-h-[330px] rounded-2xl shadow-xl">
       <h1 className="text-gray-900 animate-bounce">Did You Know?</h1>
       <em
         style={{ color: ranColor }}

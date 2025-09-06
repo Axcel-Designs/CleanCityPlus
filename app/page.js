@@ -3,8 +3,26 @@ import Image from "next/image";
 import cleanImg from "../public/cleanCity.png";
 import Button, { ButtonGrn } from "@/components/ui/Button";
 import Link from "next/link";
-import { CardHeader, CardText, CardTitle } from "react-bootstrap";
+import { CardBody, CardHeader, CardText, CardTitle } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+
+const stats = [
+  {
+    value: "75%",
+    color: "text-[#991b1b]",
+    text: "of waste is recyclable, but only 30% gets recycled",
+  },
+  {
+    value: "2.01B",
+    color: "text-[#1e40af]",
+    text: "tons of municipal solid waste generated globally per year",
+  },
+  {
+    value: "1.6B",
+    color: "text-[#86198f]",
+    text: "tons of CO2 saved annually through recycling",
+  },
+];
 
 export default async function Home() {
   return (
@@ -33,30 +51,16 @@ export default async function Home() {
         {/* stats */}
         <section>
           <div className="container mx-auto grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="text-center ring p-8 rounded-2xl">
-              <CardHeader>
-                <CardTitle className="text-3xl text-green-600">75%</CardTitle>
-              </CardHeader>
-              <CardText className="text-gray-600">
-                of waste is recyclable, but only 30% gets recycled
-              </CardText>
-            </Card>
-            <Card className="text-center ring p-8 rounded-2xl">
-              <CardHeader>
-                <CardTitle className="text-3xl text-blue-600">2.01B</CardTitle>
-              </CardHeader>
-              <CardText className="text-gray-600">
-                tons of municipal solid waste generated globally per year
-              </CardText>
-            </Card>
-            <Card className="text-center ring p-8 rounded-2xl">
-              <CardHeader>
-                <CardTitle className="text-3xl text-purple-600">1.6B</CardTitle>
-              </CardHeader>
-              <CardText className="text-gray-600">
-                tons of CO2 saved annually through recycling
-              </CardText>
-            </Card>
+            {stats.map((item, index) => (
+              <Card key={index} className="text-center ring p-8 rounded-2xl">
+                <CardBody>
+                  <div className={`${item.color}`}>
+                    <CardTitle>{item.value}</CardTitle>
+                  </div>
+                  <CardText className="text-gray-600">{item.text}</CardText>
+                </CardBody>
+              </Card>
+            ))}
           </div>
         </section>
         {/* did you know */}
