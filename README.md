@@ -83,7 +83,7 @@ cd cleancity-plus
 
 ```bash
 npm install
-npm install react-bootstrap recharts react-icons
+npm install react-bootstrap boostrap recharts react-icons
 ```
 
 ### 3. Run the development server

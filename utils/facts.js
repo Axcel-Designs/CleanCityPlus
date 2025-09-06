@@ -75,7 +75,7 @@ export const categories = [
   },
 ];
 
-export const wasteCategories = [
+export const wasteCat = [
   {
     id: "plastic",
     name: "Plastic",
