@@ -1,12 +1,12 @@
 import { AccordionBody, AccordionHeader, AccordionItem } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
-import { wasteCat } from "../../utils/facts";
+import { wasteCat } from "@/utils/facts";
 
 export default function wasteCategories() {
   return (
     <main className="container mx-auto my-4">
-      <section className="text-center text-gray-800 my-4">
-        <h1>Waste </h1>
+      <section className="text-center text-gray-800 my-4 grid gap-4">
+        <p className="text-6xl text-green-700">Waste</p>
         <em>
           Learn about different types of waste and how to properly dispose of
           them to maximize recycling and minimize environmental impact.
@@ -16,22 +16,33 @@ export default function wasteCategories() {
           tips.
         </p>
       </section>
-      <section className="container mx-auto">
-        <Accordion>
-          {wasteCat.map((waste, i) => {
-            <Accordion.Item eventKey={`'${i}'`} key={waste.idi}>
-              <Accordion.Header>{waste.name}</Accordion.Header>
-              {/* <Accordion.Body>{waste.tips}</Accordion.Body> */}
-              console.log(i);
-              console.log(waste.tips);
-              
-            </Accordion.Item>;
-          })}
-        </Accordion>
-      </section>
-      {wasteCat.map((waste, i) => {
-        <p key={i}>{waste.name}</p>;
-      })}
+      <Accordion flush>
+        <div className="container mx-auto flex flex-col gap-4">
+          {wasteCat.map((waste, i) => (
+            <AccordionItem eventKey={`'${i}'`} key={waste.id}>
+              <AccordionHeader>
+                <div className={`${waste.color} text-xl flex gap-2`}>
+                  <span>{waste.icon}</span>
+                  {waste.name}
+                </div>
+              </AccordionHeader>
+              <AccordionBody className={`${waste.bgColor}`}>
+                <dl>
+                  <dt>Waste Tips:</dt>
+                  {waste.tips.map((tip, i) => (
+                    <dd key={i}>{tip}.</dd>
+                  ))}
+                </dl>
+                <br />
+                <dl>
+                  <dt>Waste disposal guidelines:</dt>
+                </dl>
+                <dd>{waste.disposal}</dd>
+              </AccordionBody>
+            </AccordionItem>
+          ))}
+        </div>
+      </Accordion>
     </main>
   );
 }

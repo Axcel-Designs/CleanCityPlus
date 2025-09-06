@@ -30,50 +30,50 @@ const recyclingFacts = [
 
 export default recyclingFacts;
 
-export const categories = [
-  {
-    name: "Paper",
-    color: "#3B82F6",
-    description: "Includes newspapers, cardboard, magazines, and office paper.",
-    tips: "Recycle clean paper only. Avoid paper with food residue, as it can contaminate the batch. Shredded paper should be placed in a bag to prevent it from flying out of the sorting machines.",
-    disposal: "Curbside recycling bin or local drop-off center.",
-  },
-  {
-    name: "Plastic",
-    color: "#10B981",
-    description: "Includes plastic bottles, containers, and bags.",
-    tips: "Check for the recycling symbol (1-7). Rinse containers before recycling. Do not recycle plastic bags in curbside bins; take them to designated store drop-off locations.",
-    disposal: "Curbside recycling bin or special collection points.",
-  },
-  {
-    name: "Glass",
-    color: "#EF4444",
-    description: "Includes glass bottles and jars.",
-    tips: "Rinse out glass containers. Labels can usually stay on. Lids and caps should be removed and recycled separately. Broken glass should be disposed of in regular trash for safety.",
-    disposal: "Curbside recycling bin or public recycling containers.",
-  },
-  {
-    name: "E-waste",
-    color: "#F59E0B",
-    description: "Includes electronics, batteries, and cords.",
-    tips: "Never put e-waste in regular trash. Electronics contain hazardous materials that must be handled properly. Many retailers offer take-back programs for old devices.",
-    disposal: "Specialized e-waste recycling centers or collection events.",
-  },
-  {
-    name: "Organic",
-    color: "#14B8A6",
-    description: "Includes food scraps and yard waste.",
-    tips: "Compostable materials can be turned into nutrient-rich soil. This reduces methane emissions from landfills. Do not compost meat, dairy, or oils.",
-    disposal: "Compost bin or municipal composting program.",
-  },
-  {
-    name: "Other",
-    color: "#6B7280",
-    description: "Non-recyclable waste.",
-    tips: "This category includes items that cannot be recycled, such as certain types of plastic, foam, and contaminated materials.",
-    disposal: "Regular garbage.",
-  },
-];
+// export const categories = [
+//   {
+//     name: "Paper",
+//     color: "#3B82F6",
+//     description: "Includes newspapers, cardboard, magazines, and office paper.",
+//     tips: "Recycle clean paper only. Avoid paper with food residue, as it can contaminate the batch. Shredded paper should be placed in a bag to prevent it from flying out of the sorting machines.",
+//     disposal: "Curbside recycling bin or local drop-off center.",
+//   },
+//   {
+//     name: "Plastic",
+//     color: "#10B981",
+//     description: "Includes plastic bottles, containers, and bags.",
+//     tips: "Check for the recycling symbol (1-7). Rinse containers before recycling. Do not recycle plastic bags in curbside bins; take them to designated store drop-off locations.",
+//     disposal: "Curbside recycling bin or special collection points.",
+//   },
+//   {
+//     name: "Glass",
+//     color: "#EF4444",
+//     description: "Includes glass bottles and jars.",
+//     tips: "Rinse out glass containers. Labels can usually stay on. Lids and caps should be removed and recycled separately. Broken glass should be disposed of in regular trash for safety.",
+//     disposal: "Curbside recycling bin or public recycling containers.",
+//   },
+//   {
+//     name: "E-waste",
+//     color: "#F59E0B",
+//     description: "Includes electronics, batteries, and cords.",
+//     tips: "Never put e-waste in regular trash. Electronics contain hazardous materials that must be handled properly. Many retailers offer take-back programs for old devices.",
+//     disposal: "Specialized e-waste recycling centers or collection events.",
+//   },
+//   {
+//     name: "Organic",
+//     color: "#14B8A6",
+//     description: "Includes food scraps and yard waste.",
+//     tips: "Compostable materials can be turned into nutrient-rich soil. This reduces methane emissions from landfills. Do not compost meat, dairy, or oils.",
+//     disposal: "Compost bin or municipal composting program.",
+//   },
+//   {
+//     name: "Other",
+//     color: "#6B7280",
+//     description: "Non-recyclable waste.",
+//     tips: "This category includes items that cannot be recycled, such as certain types of plastic, foam, and contaminated materials.",
+//     disposal: "Regular garbage.",
+//   },
+// ];
 
 export const wasteCat = [
   {

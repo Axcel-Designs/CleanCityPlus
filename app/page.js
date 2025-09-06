@@ -3,7 +3,7 @@ import Image from "next/image";
 import cleanImg from "../public/cleanCity.png";
 import Button, { ButtonGrn } from "@/components/ui/Button";
 import Link from "next/link";
-import { CardBody, CardHeader, CardText, CardTitle } from "react-bootstrap";
+import { CardBody, CardText, CardTitle } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 
 const stats = [
@@ -33,11 +33,11 @@ export default async function Home() {
             <Image src={cleanImg} alt="img" />
           </div>
           <div className="flex flex-col justify-center items-center p-8">
-            <h1 className="text-8xl font-bold text-green-700"> CleanCity+</h1>
-            <h2 className="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
+            <p className="text-6xl font-bold text-green-700"> CleanCity+</p>
+            <p className="mt-4 font-bold text-lg text-gray-700 max-w-2xl mx-auto">
               Join the movement to keep our planet clean! Track your recycling
               efforts and learn eco-friendly habits.
-            </h2>
+            </p>
             <div className="flex justify-center gap-4 my-8">
               <Link href={"/recycling"} className="font-bold">
                 <Button>Start Tracking</Button>

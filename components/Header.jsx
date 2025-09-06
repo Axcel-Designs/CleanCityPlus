@@ -38,9 +38,7 @@ export function Navbar() {
           key={i}
           className={` p-2 ${
             menu.path === path
-              ? "font-bold text-green-900 border-b-2 border-red-600"
-              : "text-green-700"
-          }`}
+              ? "font-bold text-green-900 border-b-2 border-red-600" : "" }`}
         >
           <div className="flex items-center gap-2 text-green-700">
             {menu.icon}
@@ -82,7 +80,7 @@ export default function Header() {
       >
         {isShow && (
           <nav
-            className="md:hidden flex justify-end p-2 fixed bg-white top-15 right-0 h-full"
+            className="md:hidden flex justify-end p-2 fixed bg-gray-50 top-21 right-0 h-full"
             onClick={tggleActive}
           >
             <div className="flex flex-col gap-4 mr-4">
