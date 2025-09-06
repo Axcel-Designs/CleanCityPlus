@@ -6,7 +6,7 @@ export default function wasteCategories() {
   return (
     <main className="container mx-auto my-4">
       <section className="text-center text-gray-800 my-4 grid gap-4">
-        <p className="text-6xl text-green-700">Waste</p>
+        <p className="text-6xl text-green-700">Waste Categories</p>
         <em>
           Learn about different types of waste and how to properly dispose of
           them to maximize recycling and minimize environmental impact.
@@ -38,6 +38,16 @@ export default function wasteCategories() {
                   <dt>Waste disposal guidelines:</dt>
                 </dl>
                 <dd>{waste.disposal}</dd>
+                <dl>
+                  <dt>Examples:</dt>
+                  <dd className="flex flex-wrap gap-x-4 ">
+                    {waste.examples.map((eg, i) => (
+                      <div key={i} className={`${waste.color}`}>
+                        {eg}
+                      </div>
+                    ))}
+                  </dd>
+                </dl>
               </AccordionBody>
             </AccordionItem>
           ))}
