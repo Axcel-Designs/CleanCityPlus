@@ -1,7 +1,10 @@
 import FactGenerator from "@/components/FactGenerator";
 import Image from "next/image";
-import { Button } from "react-bootstrap";
 import cleanImg from "../public/cleanCity.png";
+import Button, { ButtonGrn } from "@/components/ui/Button";
+import Link from "next/link";
+import { CardHeader, CardText, CardTitle } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
 
 export default async function Home() {
   return (
@@ -11,22 +14,55 @@ export default async function Home() {
           <div className="">
             <Image src={cleanImg} alt="img" />
           </div>
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center p-8">
             <h1 className="text-8xl font-bold text-green-700"> CleanCity+</h1>
             <h2 className="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
               Join the movement to keep our planet clean! Track your recycling
               efforts and learn eco-friendly habits.
             </h2>
+            <div className="flex justify-center gap-4 my-8">
+              <Link href={"/recycling"} className="font-bold">
+                <Button>Start Tracking</Button>
+              </Link>
+              <Link href={"/waste"} className="font-bold">
+                <ButtonGrn>Learn About Waste</ButtonGrn>
+              </Link>
+            </div>
           </div>
         </section>
-        <div className="mt-6">
-          <Button variant="success" size="lg">
-            Get Started
-          </Button>
-        </div>
-        <div className="mt-12">
+        {/* stats */}
+        <section>
+          <div className="container mx-auto grid md:grid-cols-3 gap-8 mb-16">
+            <Card className="text-center ring p-8 rounded-2xl">
+              <CardHeader>
+                <CardTitle className="text-3xl text-green-600">75%</CardTitle>
+              </CardHeader>
+              <CardText className="text-gray-600">
+                of waste is recyclable, but only 30% gets recycled
+              </CardText>
+            </Card>
+            <Card className="text-center ring p-8 rounded-2xl">
+              <CardHeader>
+                <CardTitle className="text-3xl text-blue-600">2.01B</CardTitle>
+              </CardHeader>
+              <CardText className="text-gray-600">
+                tons of municipal solid waste generated globally per year
+              </CardText>
+            </Card>
+            <Card className="text-center ring p-8 rounded-2xl">
+              <CardHeader>
+                <CardTitle className="text-3xl text-purple-600">1.6B</CardTitle>
+              </CardHeader>
+              <CardText className="text-gray-600">
+                tons of CO2 saved annually through recycling
+              </CardText>
+            </Card>
+          </div>
+        </section>
+        {/* did you know */}
+        <section className="my-20">
           <FactGenerator />
-        </div>
+        </section>
       </main>
     </>
   );

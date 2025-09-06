@@ -10,11 +10,9 @@ export default function GoTop() {
       <div
         {...handleHover}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={active ? "text-gray-800" : ""}
+        className={active ? "text-gray-600" : "text-green-950"}
       >
-        <i className="text-2xl">
-          <FaAnglesUp />
-        </i>
+        <FaAnglesUp className="text-2xl" />
       </div>
     </section>
   );

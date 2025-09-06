@@ -29,3 +29,141 @@ const recyclingFacts = [
 ];
 
 export default recyclingFacts;
+
+export const categories = [
+  {
+    name: "Paper",
+    color: "#3B82F6",
+    description: "Includes newspapers, cardboard, magazines, and office paper.",
+    tips: "Recycle clean paper only. Avoid paper with food residue, as it can contaminate the batch. Shredded paper should be placed in a bag to prevent it from flying out of the sorting machines.",
+    disposal: "Curbside recycling bin or local drop-off center.",
+  },
+  {
+    name: "Plastic",
+    color: "#10B981",
+    description: "Includes plastic bottles, containers, and bags.",
+    tips: "Check for the recycling symbol (1-7). Rinse containers before recycling. Do not recycle plastic bags in curbside bins; take them to designated store drop-off locations.",
+    disposal: "Curbside recycling bin or special collection points.",
+  },
+  {
+    name: "Glass",
+    color: "#EF4444",
+    description: "Includes glass bottles and jars.",
+    tips: "Rinse out glass containers. Labels can usually stay on. Lids and caps should be removed and recycled separately. Broken glass should be disposed of in regular trash for safety.",
+    disposal: "Curbside recycling bin or public recycling containers.",
+  },
+  {
+    name: "E-waste",
+    color: "#F59E0B",
+    description: "Includes electronics, batteries, and cords.",
+    tips: "Never put e-waste in regular trash. Electronics contain hazardous materials that must be handled properly. Many retailers offer take-back programs for old devices.",
+    disposal: "Specialized e-waste recycling centers or collection events.",
+  },
+  {
+    name: "Organic",
+    color: "#14B8A6",
+    description: "Includes food scraps and yard waste.",
+    tips: "Compostable materials can be turned into nutrient-rich soil. This reduces methane emissions from landfills. Do not compost meat, dairy, or oils.",
+    disposal: "Compost bin or municipal composting program.",
+  },
+  {
+    name: "Other",
+    color: "#6B7280",
+    description: "Non-recyclable waste.",
+    tips: "This category includes items that cannot be recycled, such as certain types of plastic, foam, and contaminated materials.",
+    disposal: "Regular garbage.",
+  },
+];
+
+export const wasteCategories = [
+  {
+    id: "plastic",
+    name: "Plastic",
+    icon: "♻️",
+    color: "text-blue-600",
+    bgColor: "bg-blue-50",
+    tips: [
+      "Clean containers before recycling to remove food residue",
+      "Remove caps and lids as they may be made of different plastic types",
+      "Look for recycling numbers 1-7 on the bottom of containers",
+      "Avoid putting plastic bags in curbside recycling - take them to store drop-off locations",
+    ],
+    disposal:
+      "Most plastic containers can be recycled curbside. Check your local recycling guidelines for specific accepted types. Plastic bags should be taken to grocery store collection points.",
+    examples: [
+      "Water bottles",
+      "Food containers",
+      "Shampoo bottles",
+      "Yogurt cups",
+    ],
+  },
+  {
+    id: "organic",
+    name: "Organic",
+    icon: "🌱",
+    color: "text-green-600",
+    bgColor: "bg-green-50",
+    tips: [
+      "Compost fruit and vegetable scraps in your backyard or community garden",
+      "Include coffee grounds, tea bags, and eggshells",
+      "Avoid composting meat, dairy, and oily foods at home",
+      "Turn compost regularly to speed decomposition",
+    ],
+    disposal:
+      "Compost organic waste at home or use municipal organic waste collection programs. Some areas offer food waste pickup or drop-off locations.",
+    examples: [
+      "Food scraps",
+      "Yard trimmings",
+      "Coffee grounds",
+      "Paper towels",
+    ],
+  },
+  {
+    id: "ewaste",
+    name: "E-Waste",
+    icon: "💻",
+    color: "text-purple-600",
+    bgColor: "bg-purple-50",
+    tips: [
+      "Never throw electronics in regular trash due to toxic materials",
+      "Wipe all personal data before disposing of devices",
+      "Check if manufacturers offer take-back programs",
+      "Consider donating working electronics to extend their life",
+    ],
+    disposal:
+      "Take to certified e-waste recycling centers, manufacturer take-back programs, or special collection events. Many retailers also accept old electronics.",
+    examples: ["Computers", "Smartphones", "Batteries", "TV monitors"],
+  },
+  {
+    id: "paper",
+    name: "Paper",
+    icon: "📄",
+    color: "text-orange-600",
+    bgColor: "bg-orange-50",
+    tips: [
+      "Remove tape, staples, and plastic windows from envelopes",
+      "Flatten cardboard boxes to save space",
+      "Keep paper dry - wet paper can contaminate other recyclables",
+      "Shred sensitive documents but check if your recycler accepts shredded paper",
+    ],
+    disposal:
+      "Most paper and cardboard can be recycled curbside. Keep materials clean and dry. Some glossy papers and wax-coated boxes may not be accepted.",
+    examples: ["Newspapers", "Magazines", "Cardboard boxes", "Office paper"],
+  },
+  {
+    id: "glass",
+    name: "Glass",
+    icon: "🍶",
+    color: "text-teal-600",
+    bgColor: "bg-teal-50",
+    tips: [
+      "Rinse containers but labels can stay on",
+      "Separate by color if your program requires it",
+      "Remove metal caps and lids",
+      "Never include window glass, mirrors, or light bulbs with container glass",
+    ],
+    disposal:
+      "Glass containers can typically be recycled curbside or at drop-off centers. Some areas have separate collection for different glass colors.",
+    examples: ["Bottles", "Jars", "Food containers", "Beverage containers"],
+  },
+];

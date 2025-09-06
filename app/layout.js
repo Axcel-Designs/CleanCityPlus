@@ -16,8 +16,12 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div className="flex flex-col justify-between min-h-screen w-full">
-          <Header />
-          <div className="grow overflow-x-hidden">{children}</div>
+          <div className="sticky top-0 w-full">
+            <Header />
+          </div>
+          <div className="grow overflow-x-hidden inset-shadow-2xs">
+            {children}
+          </div>
           <GoTop />
           <Footer />
         </div>

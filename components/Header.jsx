@@ -12,12 +12,12 @@ const navBar = [
     icon: <FaHome size="1.25em" />,
   },
   {
-    label: "Waste",
+    label: "Waste Categories",
     path: "/waste",
     icon: <FaTableList size="1.25em" />,
   },
   {
-    label: " Recycling",
+    label: " Recycling Tracker",
     path: "/recycling",
     icon: <FaRecycle size="1.25em" />,
   },
@@ -36,10 +36,10 @@ export function Navbar() {
         <Link
           href={menu.path}
           key={i}
-          className={`hover:text-green-700 p-2 ${
+          className={` p-2 ${
             menu.path === path
-              ? "font-bold text-green-950 border-b-2 border-red-600"
-              : "text-green-800"
+              ? "font-bold text-green-900 border-b-2 border-red-600"
+              : "text-green-700"
           }`}
         >
           <div className="flex items-center gap-2">
@@ -57,7 +57,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex items-center justify-between p-4  gap-2 bg-green-50 border-b-2 border-green-600">
+      <header className="flex items-center justify-between p-4 gap-2 bg-yellow-100">
         <div className="flex items-center">
           <div className="rounded-full flex justify-around items-center text-center border-gray-400">
             <Link href={"/"}>
@@ -75,13 +75,23 @@ export default function Header() {
           {isShow ? <FaTimes /> : <FaBars />}
         </div>
       </header>
-      {isShow && (
-        <nav className="md:hidden flex justify-end p-2 " onClick={tggleActive}>
+      <div
+        className={`
+          bg-red-200 w-full overflow-hidden transition-all duration-500 ease-in-out 
+           ${isShow ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`
+        }
+          >
+        {isShow &&
+        <nav
+          className="md:hidden flex justify-end p-2 fixed bg-white top-15 right-0"
+          onClick={tggleActive}
+        >
           <div className="flex flex-col gap-4 mr-4">
             <Navbar />
           </div>
         </nav>
-      )}
+       } 
+      </div>
     </>
   );
 }
