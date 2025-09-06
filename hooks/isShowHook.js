@@ -1,8 +1,10 @@
 import { useState } from "react";
 
 export default function useShow() {
-  const [isShow, setIsShow] = useState(false);
-  const tggleActive = () => setIsShow(!isShow);
+  const [isShow, setShow] = useState(false);
+  const tggleActive = () => setShow(!isShow);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-  return { isShow, tggleActive };
+  return { isShow, handleClose, handleShow, tggleActive };
 }

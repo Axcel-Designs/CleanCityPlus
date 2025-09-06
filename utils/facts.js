@@ -167,3 +167,18 @@ export const wasteCat = [
     examples: ["Bottles", "Jars", "Food containers", "Beverage containers"],
   },
 ];
+
+export const pledgeMatters = [
+  {
+    title: "Personal Accountability",
+    text: "Making a public commitment increases your likelihood of following through on environmental goals.",
+  },
+  {
+    title: "Community Impact",
+    text: "Your pledge inspires others and creates a ripple effect of positive environmental action.",
+  },
+  {
+    title: "Collective Change",
+    text: "When we act together, small individual actions add up to significant environmental improvements.",
+  },
+];

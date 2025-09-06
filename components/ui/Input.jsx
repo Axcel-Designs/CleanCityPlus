@@ -1,18 +1,16 @@
-import React from "react";
-
-export default function Input({ type, holder, name, id, value,change, label }) {
+export default function Input({ type='text', holder, name, id, value,change, label }) {
   return (
-    <div className="ring-2 rounded-sm py-1 px-2 flex gap-4">
+    <div className="ring p-2 flex gap-4 hover:ring-green-700 bg-gray-100 my-4">
       <label htmlFor={name}>{label}</label>
       <input
-        type='text'
+        type={type}
         placeholder={holder}
         name={name}
         id={name || id}
         value={value}
         onChange={change}
         required
-        className="grow outline-none bg-amber-200 placeholder-gray-400"
+        className="grow outline-0 placeholder-gray-400"
       />
     </div>
   );

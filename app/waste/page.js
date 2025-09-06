@@ -4,8 +4,8 @@ import { wasteCat } from "@/utils/facts";
 
 export default function wasteCategories() {
   return (
-    <main className="container mx-auto my-4">
-      <section className="text-center text-gray-800 my-4 grid gap-4">
+    <main className="container mx-auto my-20">
+      <section className="text-center text-gray-800 mb-4 grid gap-2">
         <p className="text-6xl text-green-700">Waste Categories</p>
         <em>
           Learn about different types of waste and how to properly dispose of
@@ -16,6 +16,7 @@ export default function wasteCategories() {
           tips.
         </p>
       </section>
+      <section className="mb-25">
       <Accordion flush>
         <div className="container mx-auto flex flex-col gap-4">
           {wasteCat.map((waste, i) => (
@@ -53,6 +54,8 @@ export default function wasteCategories() {
           ))}
         </div>
       </Accordion>
+      </section>
+        
     </main>
   );
 }

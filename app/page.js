@@ -27,7 +27,7 @@ const stats = [
 export default async function Home() {
   return (
     <>
-      <main className=" mx-auto">
+      <main className="mx-auto">
         <section className=" pb-20 text-center grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="">
             <Image src={cleanImg} alt="img" />
