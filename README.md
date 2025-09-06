@@ -1,4 +1,4 @@
-# CleanCity+ – Interactive Waste Management Tracker
+# CleanCity+: An Interactive Waste Management Tracker
 
 **Live Demo:** [cleancity-plus.vercel.app](https://cleancity-plus.vercel.app/)
 
@@ -6,7 +6,7 @@
 
 ## 📖 Project Brief
 
-CleanCity+ is a **Next.js (React) App Router web app** that educates users on waste categories and helps them **log, track, and visualize their recycling efforts**.  
+CleanCity+ is a **Next.js (React) web app** that educates users on waste categories and helps them **log, track, and visualize their recycling efforts**.  
 It emphasizes **React fundamentals** (components, props, state, hooks) and **JavaScript interactivity** (CRUD operations, search, charts, and persistence with localStorage).
 
 ---
