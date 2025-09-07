@@ -7,10 +7,15 @@ import { Modal, ModalBody, ModalHeader, ModalTitle } from "react-bootstrap";
 import useShow from "@/hooks/isShowHook";
 
 export default function TrackerForm({ data, setData }) {
-  const [formData, setFormData] = useState({ item: "", qty: "", category: wasteCat[0].id });
+  const [formData, setFormData] = useState({
+    id: formData.length === 0 ? 1 : formData[formData.length - 1].id + 1,
+    item: "",
+    qty: "",
+    category: wasteCat[0].id,
+  });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const {isShow, handleClose, handleShow} = useShow()
+  const { isShow, handleClose, handleShow } = useShow();
 
   function formChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,11 +24,11 @@ export default function TrackerForm({ data, setData }) {
   function handleSubmit(e) {
     e.preventDefault();
     setData([...data, formData]);
-    localStorage.setItem('entryLocal',JSON.stringify([...data, formData]))
+    localStorage.setItem("entryLocal", JSON.stringify([...data, formData]));
     setFormData({ item: "", qty: "", category: "" });
-    handleShow()
+    handleShow();
     // setIsSubmit(true);
-  } 
+  }
 
   return (
     <section className="container mx-auto my-4 p-4 shadow-xl">
@@ -38,7 +43,7 @@ export default function TrackerForm({ data, setData }) {
             onChange={formChange}
           >
             {wasteCat.map((category, i) => (
-              <option key={i} value={category.id} >
+              <option key={i} value={category.id}>
                 {category.name}
               </option>
             ))}
