@@ -18,14 +18,7 @@ export default function PledgeForm({ onAddPledge }) {
     email: "",
     pledge: "",
   });
-  const [pledges, setPledges] = useState([]);
 
-  useEffect(() => {
-    const storedForm = JSON.parse(localStorage.getItem("formLocal"));
-    if (storedForm) {
-      setPledges(storedForm);
-    }
-  }, []);
 
   function dataForm(e) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));

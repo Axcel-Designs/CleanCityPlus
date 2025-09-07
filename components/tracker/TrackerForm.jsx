@@ -3,11 +3,14 @@ import React, { useState } from "react";
 import { ButtonGrn } from "../ui/Button";
 import Input from "../ui/Input";
 import { wasteCat } from "@/utils/facts";
+import { Modal, ModalBody, ModalHeader, ModalTitle } from "react-bootstrap";
+import useShow from "@/hooks/isShowHook";
 
 export default function TrackerForm() {
   const [formData, setFormData] = useState({ item: "", qty: "", category: "" });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const {isShow, handleClose, handleShow} = useShow()
 
   function formChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -15,8 +18,10 @@ export default function TrackerForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    localStorage.setItem('entryLocal',JSON.stringify(formData))
+    localStorage.setItem('entryLocal',JSON.stringify([formData]))
     setFormData({ item: "", qty: "", category: "" });
+    handleShow()
+    // setIsSubmit(true);
   } 
 
   return (
@@ -25,9 +30,14 @@ export default function TrackerForm() {
       <p className="text-2xl ">Add Recycling Entry</p>
       <form onSubmit={handleSubmit} autoComplete="on">
         <div className="flex flex-wrap justify-between items-center gap-1">
-          <select className="ring px-4 py-2 bg-gray-100 outline-0" onChange={formChange} name="category">
+          <select
+            className="ring px-4 py-2 bg-gray-100 outline-0"
+            name="category"
+            value={formData.category}
+            onChange={formChange}
+          >
             {wasteCat.map((category, i) => (
-              <option key={i} value={category.id}>
+              <option key={i} value={category.id} selected>
                 {category.name}
               </option>
             ))}
@@ -50,6 +60,14 @@ export default function TrackerForm() {
         </div>
         <ButtonGrn children={"Add"} type="submit" />
       </form>
+      <div className="my-4">
+        <Modal show={isShow} onHide={handleClose}>
+          <ModalHeader closeButton>
+            <ModalTitle>Thanks</ModalTitle>
+          </ModalHeader>
+          <ModalBody>Logged successfully!</ModalBody>
+        </Modal>
+      </div>
     </section>
   );
 }

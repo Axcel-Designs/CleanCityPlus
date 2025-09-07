@@ -18,7 +18,7 @@ const navBar = [
   },
   {
     label: " Recycling Tracker",
-    path: "/recycling",
+    path: "/recyclingTracker",
     icon: <FaRecycle size="1.25em" />,
   },
   {

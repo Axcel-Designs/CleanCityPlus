@@ -1,8 +1,18 @@
+"use client";
 import TrackerForm from "@/components/tracker/TrackerForm";
 import TrackerTable from "@/components/tracker/TrackerTable";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-export default function recyclingTracker() {
+export default function RecyclingTracker() {
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState([]);
+
+  useEffect(() => {
+    const storedData = JSON.parse(localStorage.getItem("entryLocal"));
+    if (storedData) {
+      setData(Array.isArray(storedData) ? storedData : [storedData]);
+    }
+  }, []);
   return (
     <main className="container mx-auto my-20">
       <section className="text-center">
@@ -15,7 +25,7 @@ export default function recyclingTracker() {
       <TrackerForm />
       <section></section>
       <section></section>
-      <TrackerTable />
+      <TrackerTable data={data} search={search} />
     </main>
   );
 }
