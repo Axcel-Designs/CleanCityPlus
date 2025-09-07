@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 
 export default function PledgeList({ pledges = [] }) {
   return (
-    <section className="my-4 shadow-xl">
+    <section className="my-4 shadow-xl/20">
         <Table striped="columns">
           <thead>
             <tr>

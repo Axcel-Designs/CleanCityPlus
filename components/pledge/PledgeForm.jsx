@@ -19,7 +19,6 @@ export default function PledgeForm({ onAddPledge }) {
     pledge: "",
   });
 
-
   function dataForm(e) {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
@@ -33,7 +32,7 @@ export default function PledgeForm({ onAddPledge }) {
 
   return (
     <>
-      <div className="ring-1 p-4 shadow-xl">
+      <div className="ring-1 p-4 shadow-xl/20">
         <p className="text-2xl text-green-700">
           Make Your Environmental Pledge
         </p>

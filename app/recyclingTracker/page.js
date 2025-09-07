@@ -1,4 +1,5 @@
 "use client";
+import Chart from "@/components/Chart";
 import TrackerForm from "@/components/tracker/TrackerForm";
 import TrackerTable from "@/components/tracker/TrackerTable";
 import React, { useEffect, useState } from "react";
@@ -22,8 +23,8 @@ export default function RecyclingTracker() {
           badges for making a positive environmental impact
         </em>
       </section>
-      <TrackerForm />
-      <section></section>
+      <TrackerForm data={data} setData={setData} />
+      <Chart/>
       <section></section>
       <TrackerTable data={data} search={search} />
     </main>

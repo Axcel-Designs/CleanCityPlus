@@ -6,8 +6,8 @@ import { wasteCat } from "@/utils/facts";
 import { Modal, ModalBody, ModalHeader, ModalTitle } from "react-bootstrap";
 import useShow from "@/hooks/isShowHook";
 
-export default function TrackerForm() {
-  const [formData, setFormData] = useState({ item: "", qty: "", category: "" });
+export default function TrackerForm({ data, setData }) {
+  const [formData, setFormData] = useState({ item: "", qty: "", category: wasteCat[0].id });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const {isShow, handleClose, handleShow} = useShow()
@@ -18,7 +18,8 @@ export default function TrackerForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    localStorage.setItem('entryLocal',JSON.stringify([formData]))
+    setData([...data, formData]);
+    localStorage.setItem('entryLocal',JSON.stringify([...data, formData]))
     setFormData({ item: "", qty: "", category: "" });
     handleShow()
     // setIsSubmit(true);
@@ -37,7 +38,7 @@ export default function TrackerForm() {
             onChange={formChange}
           >
             {wasteCat.map((category, i) => (
-              <option key={i} value={category.id} selected>
+              <option key={i} value={category.id} >
                 {category.name}
               </option>
             ))}
