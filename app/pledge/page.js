@@ -33,7 +33,7 @@ export default function PledgePage() {
         </p>
       </section>
       <section className="my-4">
-        <div className="shadow-xl/20 flex flex-col items-center gap-2 text-gray-700 bg-blue-200 p-4 w-fit">
+        <div className="shadow-xl flex flex-col items-center text-gray-700 bg-blue-200 p-4 w-fit text-center rounded-2xl">
           <FiUsers className="text-4xl text-blue-600" />
           <p>Total Number of Pledges</p>
           <p>{pledges.length}</p>

@@ -8,9 +8,9 @@ import useShow from "@/hooks/isShowHook";
 
 export default function TrackerForm({ data, setData }) {
   const [formData, setFormData] = useState({
-    id: formData.length === 0 ? 1 : formData[formData.length - 1].id + 1,
-    item: "",
-    qty: "",
+    id: Date.now(),
+    item:"",
+    qty:"",
     category: wasteCat[0].id,
   });
   const [formErrors, setFormErrors] = useState({});
@@ -18,7 +18,7 @@ export default function TrackerForm({ data, setData }) {
   const { isShow, handleClose, handleShow } = useShow();
 
   function formChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
   }
 
   function handleSubmit(e) {
@@ -31,9 +31,8 @@ export default function TrackerForm({ data, setData }) {
   }
 
   return (
-    <section className="container mx-auto my-4 p-4 shadow-xl">
-      {/* <div>TrackerForm</div> */}
-      <p className="text-2xl ">Add Recycling Entry</p>
+    <section className="container mx-auto my-4 p-4 shadow-xl rounded-2xl">
+      <p className="text-2xl text-green-700">Add Recycling Entry</p>
       <form onSubmit={handleSubmit} autoComplete="on">
         <div className="flex flex-wrap justify-between items-center gap-1">
           <select

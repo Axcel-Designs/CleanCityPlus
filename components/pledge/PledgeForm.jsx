@@ -32,7 +32,7 @@ export default function PledgeForm({ onAddPledge }) {
 
   return (
     <>
-      <div className="ring-1 p-4 shadow-xl/20">
+      <div className="ring-1 p-4 shadow-xl/20 rounded-2xl">
         <p className="text-2xl text-green-700">
           Make Your Environmental Pledge
         </p>

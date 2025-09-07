@@ -8,7 +8,7 @@ export default function Button({ children, onClick, type = "button", classN }) {
     <button
       onClick={onClick}
       {...handleHover}
-      className={`py-2 px-4 rounded-xl border shadow-sm transition-colors duration-200 ${classN} ${
+      className={`py-2 px-4 rounded-xl border shadow-sm transition-colors duration-200 flex items-center ${classN} ${
         active ? "bg-[#b45309] text-white" : "bg-white text-[#b45309]"
       }`}
       type={type}

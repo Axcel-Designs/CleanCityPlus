@@ -4,11 +4,19 @@ import Input from "../ui/Input";
 import Button from "../ui/Button";
 import { useState } from "react";
 import { CiTrash, CiEdit } from "react-icons/ci";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { TfiArrowsVertical } from "react-icons/tfi";
 
-export default function TrackerTable({ data = [] }) {
+export default function TrackerTable({ data = [], setData }) {
   const [search, setSearch] = useState("");
   const [sortColumn, setSortColumn] = useState(null);
   const [sortOrder, setSortOrder] = useState("asc");
+  const [editFormData, setEditFormData] = useState({
+    id: "",
+    item: "",
+    qty: "",
+    category: "",
+  });
 
   let showData = data;
   showData = showData.filter(
@@ -16,7 +24,6 @@ export default function TrackerTable({ data = [] }) {
       element.item.toLowerCase().includes(search.toLowerCase()) ||
       element.category.toLowerCase().includes(search.toLowerCase())
   );
-
 
   if (sortColumn) {
     showData.sort((a, b) => {
@@ -39,8 +46,38 @@ export default function TrackerTable({ data = [] }) {
     }
   };
 
+  function sortArrow(column) {
+    if (sortColumn !== column) {
+      return <TfiArrowsVertical />;
+    }
+    return sortOrder === "asc" ? <FaAngleUp /> : <FaAngleDown />;
+  }
+  function editItem(id) {
+    const updatedData = data.map((item) => {
+      if (item.id === id) {
+        return { ...item, edited: true };
+      }
+      return item;
+    });
+    const itemToEdit = data.find((item) => item.id === id);
+    setEditFormData({
+      item: itemToEdit.item,
+      qty: itemToEdit.qty,
+      category: itemToEdit.category,
+    });
+    setData(updatedData);
+    localStorage.setItem("entryLocal", JSON.stringify(updatedData));
+  }
+
+  function deleteItem(id) {
+    const delData = data.filter((item) => item.id !== id);
+    setData(delData);
+    localStorage.setItem("entryLocal", JSON.stringify(delData));
+  }
+
   return (
-    <section className="container mx-auto my-4 p-4 shadow-xl">
+    <section className="container mx-auto my-4 p-4 shadow-xl rounded-2xl">
+      <p className="text-2xl text-green-700">My Recycling Log</p>
       <div className="my-4 flex flex-wrap items-center justify-between gap-x-6">
         <div className=" grow">
           <Input
@@ -52,15 +89,18 @@ export default function TrackerTable({ data = [] }) {
           />
         </div>
         <div className="my-4 flex flex-wrap items-center justify-between gap-4">
-          <Button
-            children={"category"}
-            onClick={() => handleSort("category")}
-          />
-          <Button children={"item"} onClick={() => handleSort("item")} />
-          <Button children={"quantity"} onClick={() => handleSort('qty')} />
+          <Button onClick={() => handleSort("category")}>
+            category {sortArrow("category")}
+          </Button>
+          <Button onClick={() => handleSort("item")}>
+            item {sortArrow("item")}
+          </Button>
+          <Button onClick={() => handleSort("qty")}>
+            quantity{sortArrow("qty")}
+          </Button>
         </div>
       </div>
-      <Table striped hover bordered variant="secondary">
+      <Table striped="columns" hover bordered variant="secondary">
         <thead>
           <tr>
             <th>#</th>
@@ -79,12 +119,18 @@ export default function TrackerTable({ data = [] }) {
               <td>{item.item}</td>
               <td>{item.qty}</td>
               <td>
-                <div className="text-blue-600 point">
+                <div
+                  className="text-blue-600 point"
+                  onClick={() => editItem(item.id)}
+                >
                   <CiEdit />
                 </div>
               </td>
               <td>
-                <div className="text-red-600 point">
+                <div
+                  className="text-red-600 point"
+                  onClick={() => deleteItem(item.id)}
+                >
                   <CiTrash />
                 </div>
               </td>

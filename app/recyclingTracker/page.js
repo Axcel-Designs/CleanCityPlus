@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
 
 export default function RecyclingTracker() {
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("entryLocal"));
@@ -14,6 +13,11 @@ export default function RecyclingTracker() {
       setData(Array.isArray(storedData) ? storedData : [storedData]);
     }
   }, []);
+  const totalQuantity = data.reduce((acc, crr, i) => {
+    acc += Number(crr.qty);
+    return acc;
+  }, 0);
+
   return (
     <main className="container mx-auto my-20">
       <section className="text-center">
@@ -23,10 +27,22 @@ export default function RecyclingTracker() {
           badges for making a positive environmental impact
         </em>
       </section>
+      <section className="my-4 flex gap-2">
+        <div className="shadow-xl wo-[190px] flex flex-col items-center text-gray-700 bg-blue-200 p-4 text-center rounded-2xl">
+          <p className="text-4xl text-blue-600">🔢 </p>
+          <p>Number of Recycle</p>
+          <p className="text-2xl font-semibold">{data.length}</p>
+        </div>
+        <div className="shadow-xl w-[190px] flex flex-col items-center text-gray-700 bg-blue-200 p-4 text-center rounded-2xl">
+          <p className="text-4xl text-blue-600">♻️</p>
+          <p>Items Recycled</p>
+          <p className="text-2xl font-semibold">{totalQuantity}</p>
+        </div>
+      </section>
       <TrackerForm data={data} setData={setData} />
-      <Chart/>
+      <Chart />
       <section></section>
-      <TrackerTable data={data} search={search} />
+      <TrackerTable data={data} setData={setData} />
     </main>
   );
 }
