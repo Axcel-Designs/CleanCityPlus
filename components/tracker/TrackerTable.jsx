@@ -54,20 +54,13 @@ export default function TrackerTable() {
     }
     return sortOrder === "asc" ? <FaAngleUp /> : <FaAngleDown />;
   }
-  function editItem(id) {
-    if (data.find((item) => item.id === id)) {
-      return setFormData({
-        item: data.item,
-        qty: data.qty,
-        category: data.category,
-      });
-    }
-    //  setFormData(item);
+  function editItem(item) {
+    setFormData(item);
   }
 
   function deleteItem(id) {
-    const delData = data.filter((item) => item.id !== id);
-    setData(delData);
+    const updatedData = data.filter((item) => item.id !== id);
+    setData(updatedData);
   }
 
   return (
@@ -116,7 +109,7 @@ export default function TrackerTable() {
               <td>
                 <div
                   className="text-blue-600 point"
-                  onClick={() => editItem(item.id)}
+                  onClick={() => editItem(item)}
                 >
                   <CiEdit />
                 </div>

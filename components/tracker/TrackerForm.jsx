@@ -19,11 +19,21 @@ export default function TrackerForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setData([...data, formData]);
-    localStorage.setItem("entryLocal", JSON.stringify([...data, formData]));
+
+    if (formData.id) {
+       // Edit
+       const updated = data.map((item) =>
+         item.id === formData.id ? formData : item
+       );
+       setData(updated);
+     } else {
+       // Add
+       setData([...data, formData]);
+     }
+    // localStorage.setItem("entryLocal", JSON.stringify([...data, formData]));
+
     setFormData({ item: "", qty: "", category: "" });
     handleShow();
-    // setIsSubmit(true);
   }
 
   return (
