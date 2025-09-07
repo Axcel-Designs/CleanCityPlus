@@ -2,11 +2,10 @@
 import Chart from "@/components/Chart";
 import TrackerForm from "@/components/tracker/TrackerForm";
 import TrackerTable from "@/components/tracker/TrackerTable";
-import React, { useEffect, useState } from "react";
 import { useTracker } from "../context/TrackerContext";
 
 export default function RecyclingTracker() {
-  const { data, setData, formData, setFormData } = useTracker();
+  const { data } = useTracker();
 
   const totalQuantity = data.reduce((acc, crr, i) => {
     acc += Number(crr.qty);

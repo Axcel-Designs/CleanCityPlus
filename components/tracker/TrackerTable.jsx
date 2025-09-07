@@ -10,7 +10,6 @@ import { useTracker } from "@/app/context/TrackerContext";
 
 export default function TrackerTable() {
   const { data, setData, formData, setFormData } = useTracker();
-
   const [search, setSearch] = useState("");
   const [sortColumn, setSortColumn] = useState(null);
   const [sortOrder, setSortOrder] = useState("asc");
@@ -56,26 +55,19 @@ export default function TrackerTable() {
     return sortOrder === "asc" ? <FaAngleUp /> : <FaAngleDown />;
   }
   function editItem(id) {
-    const updatedData = data.map((item) => {
-      if (item.id === id) {
-        return { ...item, edited: true };
-      }
-      return item;
-    });
-    const itemToEdit = data.find((item) => item.id === id);
-    setEditFormData({
-      item: itemToEdit.item,
-      qty: itemToEdit.qty,
-      category: itemToEdit.category,
-    });
-    setData(updatedData);
-    localStorage.setItem("entryLocal", JSON.stringify(updatedData));
+    if (data.find((item) => item.id === id)) {
+      return setFormData({
+        item: data.item,
+        qty: data.qty,
+        category: data.category,
+      });
+    }
+    //  setFormData(item);
   }
 
   function deleteItem(id) {
     const delData = data.filter((item) => item.id !== id);
     setData(delData);
-    localStorage.setItem("entryLocal", JSON.stringify(delData));
   }
 
   return (

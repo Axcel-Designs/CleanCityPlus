@@ -14,7 +14,7 @@ export default function TrackerForm() {
   const { isShow, handleClose, handleShow } = useShow();
 
   function formChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
+    setFormData({ ...formData, [e.target.name]: e.target.value});
   }
 
   function handleSubmit(e) {
@@ -46,7 +46,7 @@ export default function TrackerForm() {
           <Input
             label={"Item Description"}
             holder={"Enter item description"}
-            value={formData.item.trim()}
+            value={formData.item}
             change={formChange}
             name={"item"}
           />
@@ -54,7 +54,7 @@ export default function TrackerForm() {
             label={"Quantity"}
             holder={"Enter quantity"}
             type="number"
-            value={formData.qty.trim()}
+            value={formData.qty}
             change={formChange}
             name={"qty"}
           />
