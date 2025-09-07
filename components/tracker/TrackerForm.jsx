@@ -5,14 +5,10 @@ import Input from "../ui/Input";
 import { wasteCat } from "@/utils/facts";
 import { Modal, ModalBody, ModalHeader, ModalTitle } from "react-bootstrap";
 import useShow from "@/hooks/isShowHook";
+import { useTracker } from "@/app/context/TrackerContext";
 
-export default function TrackerForm({ data, setData }) {
-  const [formData, setFormData] = useState({
-    id: Date.now(),
-    item:"",
-    qty:"",
-    category: wasteCat[0].id,
-  });
+export default function TrackerForm() {
+  const { data, setData, formData, setFormData } = useTracker();
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const { isShow, handleClose, handleShow } = useShow();

@@ -3,16 +3,11 @@ import Chart from "@/components/Chart";
 import TrackerForm from "@/components/tracker/TrackerForm";
 import TrackerTable from "@/components/tracker/TrackerTable";
 import React, { useEffect, useState } from "react";
+import { useTracker } from "../context/TrackerContext";
 
 export default function RecyclingTracker() {
-  const [data, setData] = useState([]);
+  const { data, setData, formData, setFormData } = useTracker();
 
-  useEffect(() => {
-    const storedData = JSON.parse(localStorage.getItem("entryLocal"));
-    if (storedData) {
-      setData(Array.isArray(storedData) ? storedData : [storedData]);
-    }
-  }, []);
   const totalQuantity = data.reduce((acc, crr, i) => {
     acc += Number(crr.qty);
     return acc;
@@ -39,10 +34,10 @@ export default function RecyclingTracker() {
           <p className="text-2xl font-semibold">{totalQuantity}</p>
         </div>
       </section>
-      <TrackerForm data={data} setData={setData} />
+      <TrackerForm />
       <Chart />
       <section></section>
-      <TrackerTable data={data} setData={setData} />
+      <TrackerTable />
     </main>
   );
 }

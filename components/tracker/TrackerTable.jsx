@@ -6,8 +6,11 @@ import { useState } from "react";
 import { CiTrash, CiEdit } from "react-icons/ci";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { TfiArrowsVertical } from "react-icons/tfi";
+import { useTracker } from "@/app/context/TrackerContext";
 
-export default function TrackerTable({ data = [], setData }) {
+export default function TrackerTable() {
+  const { data, setData, formData, setFormData } = useTracker();
+
   const [search, setSearch] = useState("");
   const [sortColumn, setSortColumn] = useState(null);
   const [sortOrder, setSortOrder] = useState("asc");
