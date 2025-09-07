@@ -12,11 +12,10 @@ export default function recyclingTracker() {
           badges for making a positive environmental impact
         </em>
       </section>
-      <section></section>
       <TrackerForm />
-      <section>
-        <TrackerTable />
-      </section>
+      <section></section>
+      <section></section>
+      <TrackerTable />
     </main>
   );
 }

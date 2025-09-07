@@ -1,6 +1,6 @@
 export default function Input({ type='text', holder, name, id, value,change, label }) {
   return (
-    <div className="ring p-2 flex gap-4 hover:ring-green-700 bg-gray-100 my-4">
+    <div className="ring p-2 flex gap-4 hover:ring-green-700 bg-gray-100 my-2">
       <label htmlFor={name}>{label}</label>
       <input
         type={type}
