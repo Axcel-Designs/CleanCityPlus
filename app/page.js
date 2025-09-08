@@ -41,7 +41,6 @@ export default function Home() {
         <Container fluid>
           <Row className="align-items-center ">
             <Col xs={12} lg={6} className="p-0">
-              {" "}
               <Image src={cleanImg} alt="CleanCity logo" />
             </Col>
             <Col
