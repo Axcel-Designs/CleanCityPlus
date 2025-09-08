@@ -17,12 +17,12 @@ export default function RecyclingTracker() {
       <section className="text-center">
         <p className="text-6xl text-green-700">Recycling Tracker</p>
         <em>
-          Log your recycling efforts, track your emrogress, and earn achievement
+          Log your recycling efforts, track your progress, and earn achievement
           badges for making a positive environmental impact
         </em>
       </section>
       <section className="my-4 flex gap-2">
-        <div className="shadow-xl wo-[190px] flex flex-col items-center text-gray-700 bg-blue-200 p-4 text-center rounded-2xl">
+        <div className="shadow-xl w-[190px] flex flex-col items-center text-gray-700 bg-blue-200 p-4 text-center rounded-2xl">
           <p className="text-4xl text-blue-600">🔢 </p>
           <p>Number of Recycle</p>
           <p className="text-2xl font-semibold">{data.length}</p>
