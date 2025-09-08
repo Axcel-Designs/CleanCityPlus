@@ -24,7 +24,7 @@ export default function PledgePage() {
 
   return (
     <main>
-      <Container className="my-20 bg-amber-400">
+      <Container className="my-20">
         <section className="text-center text-gray-800 mb-4">
           <Row className="gy-2">
             <Col>
