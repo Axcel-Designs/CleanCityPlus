@@ -8,7 +8,7 @@ export const useTracker = () => useContext(TrackerContext);
 export default function TrackerProvider({ children }) {
   const [data, setData] = useState([]);
   const [formData, setFormData] = useState({
-    id: Date.now(),
+    id: null,
     item: "",
     qty: "",
     category: wasteCat[0].id,

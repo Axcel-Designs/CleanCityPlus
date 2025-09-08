@@ -13,12 +13,6 @@ export default function TrackerTable() {
   const [search, setSearch] = useState("");
   const [sortColumn, setSortColumn] = useState(null);
   const [sortOrder, setSortOrder] = useState("asc");
-  const [editFormData, setEditFormData] = useState({
-    id: "",
-    item: "",
-    qty: "",
-    category: "",
-  });
 
   let showData = data;
   showData = showData.filter(

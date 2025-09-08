@@ -14,25 +14,24 @@ export default function TrackerForm() {
   const { isShow, handleClose, handleShow } = useShow();
 
   function formChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value});
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
 
     if (formData.id) {
-       // Edit
-       const updated = data.map((item) =>
-         item.id === formData.id ? formData : item
-       );
-       setData(updated);
-     } else {
-       // Add
-       setData([...data, formData]);
-     }
-    // localStorage.setItem("entryLocal", JSON.stringify([...data, formData]));
-
-    setFormData({ item: "", qty: "", category: "" });
+      // Edit
+      const updated = data.map((item) =>
+        item.id === formData.id ? formData : item
+      );
+      setData(updated);
+    } else {
+      // Add
+      const newEntry = { ...formData, id: Date.now() };
+      setData([...data, newEntry]);
+    }
+    setFormData({ item: "", qty: "", category: wasteCat[0].id });
     handleShow();
   }
 
@@ -69,7 +68,7 @@ export default function TrackerForm() {
             name={"qty"}
           />
         </div>
-        <ButtonGrn children={"Add"} type="submit" />
+        <ButtonGrn type="submit">{formData.id ? "Update" : "Add"}</ButtonGrn>
       </form>
       <div className="my-4">
         <Modal show={isShow} onHide={handleClose}>

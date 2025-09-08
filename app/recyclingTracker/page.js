@@ -38,7 +38,7 @@ export default function RecyclingTracker() {
         <div className="flex flex-wrap justify-start gap-2">
           <div>
             {data.length >= 10 && (
-              <dl className="flex flex-col text-center shadow-xl/30 p-2 rounded-xl">
+              <dl className="flex flex-col text-center shadow-xl p-2 rounded-xl">
                 <dt className="text-4xl shadow-2xl">🏆</dt>
                 <b className='text-blue-600'>Champion Recycler </b>
                 <p>10 recycling entries</p>
@@ -47,7 +47,7 @@ export default function RecyclingTracker() {
           </div>
           <div>
             {data.length >= 5 && (
-              <dl className="flex flex-col text-center shadow-xl/30 p-2 rounded-xl">
+              <dl className="flex flex-col text-center shadow-xl p-2 rounded-xl">
                 <dt className="text-4xl">🎊</dt>
                 <b className='text-yellow-900'>Consistent Recycler</b>
                 <p>5 recycling entries</p>
@@ -56,7 +56,7 @@ export default function RecyclingTracker() {
           </div>
           <div>
             {data.length > 0 && (
-              <dl className="flex flex-col text-center shadow-xl/30 p-2 rounded-xl">
+              <dl className="flex flex-col text-center shadow-xl p-2 rounded-xl">
                 <dt className="text-4xl">🎉</dt>
                 <b className='text-red-600'>Getting Started </b>
                 <p>1 recycling entry</p>
