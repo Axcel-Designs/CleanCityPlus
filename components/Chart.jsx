@@ -36,7 +36,7 @@ export default function Chart() {
       <p className="text-2xl text-green-700 mb-4">Recycling Progress</p>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={categoryTotals}>
+          <BarChart data={categoryTotals} >
             <XAxis dataKey="category" />
             <YAxis />
             <CartesianGrid strokeDasharray="5 5" />
