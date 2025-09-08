@@ -55,7 +55,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex items-center justify-between p-4 gap-2 bg-yellow-100 no-underline">
+      <header className="flex items-center justify-between p-4 gap-2 bg-white shadow/20">
         <div className="flex items-center">
           <div className="rounded-full flex justify-around items-center text-center border-gray-400">
             <Link href={"/"} className="no-underline">
@@ -80,7 +80,7 @@ export default function Header() {
       >
         {isShow && (
           <nav
-            className="md:hidden flex justify-end p-2 fixed bg-gray-50 top-21 right-0 h-full"
+            className="md:hidden flex justify-end p-2 fixed bg-white top-21 right-0 h-full"
             onClick={tggleActive}
           >
             <div className="flex flex-col gap-4 mr-4">
