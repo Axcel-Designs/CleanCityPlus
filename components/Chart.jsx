@@ -14,6 +14,7 @@ import {
   PieChart,
   Pie,
   Cell,
+  Rectangle,
 } from "recharts";
 
 export default function Chart() {
@@ -36,13 +37,17 @@ export default function Chart() {
       <p className="text-2xl text-green-700 mb-4">Recycling Progress</p>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={categoryTotals} >
+          <BarChart data={categoryTotals}>
             <XAxis dataKey="category" />
             <YAxis />
             <CartesianGrid strokeDasharray="5 5" />
             <Legend />
-            <Tooltip />
-            <Bar dataKey="qty" fill="#82ca9d" />
+            <Tooltip cursor={{ fill: "transparent" }} />
+            <Bar
+              dataKey="qty"
+              fill="#82ca9d"
+              activeBar={<Rectangle fill="yellow" stroke="brown" />}
+            />
           </BarChart>
         </ResponsiveContainer>
 
@@ -89,8 +94,12 @@ export default function Chart() {
             <YAxis />
             <CartesianGrid strokeDasharray="5 5" />
             <Legend />
-            <Tooltip />
-            <Bar dataKey="qty" fill="#8884d8" />
+            <Tooltip cursor={{ fill: "transparent" }} />
+            <Bar
+              dataKey="qty"
+              fill="#8884d8"
+              activeBar={<Rectangle fill="blue" stroke="brown" />}
+            />
           </BarChart>
         </ResponsiveContainer>
       </div>
