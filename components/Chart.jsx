@@ -33,7 +33,7 @@ export default function Chart() {
   const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f50", "#8dd1e1"];
 
   return (
-    <section className="container mx-auto my-4 p-4 shadow-xl rounded-2xl">
+    <section className="bg-white container mx-auto my-4 p-4 shadow-xl rounded-2xl">
       <p className="text-2xl text-green-700 mb-4">Recycling Progress</p>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <ResponsiveContainer width="100%" height={300}>
