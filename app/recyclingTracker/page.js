@@ -67,6 +67,17 @@ export default function RecyclingTracker() {
           )}
 
           <Row className="g-4">
+            {data.length >= 100 && (
+              <Col xs={12} sm={6} md={4} lg={3}>
+                <Card className="shadow-xl text-center p-3 rounded-xl">
+                  <Card.Body>
+                    <dt className="text-4xl">🏆</dt>
+                    <b className="text-blue-600">Legend Recycler</b>
+                    <p>10 recycling entries</p>
+                  </Card.Body>
+                </Card>
+              </Col>
+            )}
             {data.length >= 10 && (
               <Col xs={12} sm={6} md={4} lg={3}>
                 <Card className="shadow-xl text-center p-3 rounded-xl">
