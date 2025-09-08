@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 
 export default function PledgeList({ pledges = [] }) {
   return (
-    <section className="container mx-auto my-4 p-4 shadow-xl rounded-2xl">
+    <section className="bg-white container mx-auto my-4 p-4 shadow-xl rounded-2xl">
       <Table striped="columns" hover>
         <thead>
           <tr>

@@ -23,7 +23,7 @@ export default function PledgePage() {
   }
 
   return (
-    <main className="bg-gray-100 h-full">
+    <main className="bg-gray-50 h-full">
       <Container className="py-20">
         <section className="text-center text-gray-800 mb-4">
           <Row className="gy-2">

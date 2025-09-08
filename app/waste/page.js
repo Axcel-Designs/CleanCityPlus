@@ -13,15 +13,13 @@ import { wasteCat } from "@/utils/facts";
 
 export default function WasteCategories() {
   return (
-    <main>
-      <Container className="my-20">
+    <main className="bg-gray-50">
+      <Container className="py-20">
         {/* Section Heading */}
         <section className="text-center text-gray-700 mb-4">
           <Row className="gy-2">
             <Col>
-              <p className="text-6xl text-green-700">
-                Waste Categories
-              </p>
+              <p className="text-6xl text-green-700">Waste Categories</p>
               <em>
                 Learn about different types of waste and how to properly dispose
                 of them to maximize recycling and minimize environmental impact.
@@ -40,9 +38,12 @@ export default function WasteCategories() {
             <Row className="gy-4">
               {wasteCat.map((waste, i) => (
                 <Col xs={12} key={waste.id}>
-                  <AccordionItem eventKey={i.toString()}>
+                  <AccordionItem
+                    eventKey={i.toString()}
+                    className="bg-white rounded-2xl"
+                  >
                     <AccordionHeader>
-                      <div className={`${waste.color} fs-5 d-flex gap-2`}>
+                      <div className={`${waste.color} text-2xl flex gap-2`}>
                         <span>{waste.icon}</span>
                         {waste.name}
                       </div>

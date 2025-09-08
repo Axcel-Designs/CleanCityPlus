@@ -12,7 +12,7 @@ export default function RecyclingTracker() {
   const totalQuantity = data.reduce((acc, crr) => acc + Number(crr.qty), 0);
 
   return (
-    <main className="bg-gray-100">
+    <main className="bg-gray-50">
       <Container className="py-20">
         <section className="text-center mb-5">
           <Row>

@@ -58,7 +58,7 @@ export default function TrackerTable() {
   }
 
   return (
-    <section className="container mx-auto my-4 p-4 shadow-xl rounded-2xl">
+    <section className="bg-white container mx-auto my-4 p-4 shadow-xl rounded-2xl">
       <p className="text-2xl text-green-700">My Recycling Log</p>
       <div className="my-4 flex flex-wrap items-center justify-between gap-x-6">
         <div className=" grow">
