@@ -34,7 +34,7 @@ export default function Chart() {
   return (
     <section className="container mx-auto my-4 p-4 shadow-xl rounded-2xl">
       <p className="text-2xl text-green-700 mb-4">Recycling Progress</p>
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={categoryTotals}>
             <XAxis dataKey="category" />
@@ -83,7 +83,6 @@ export default function Chart() {
             />
           </AreaChart>
         </ResponsiveContainer>
-
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={data}>
             <XAxis dataKey="item" />
