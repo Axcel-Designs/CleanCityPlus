@@ -28,11 +28,11 @@ export default function RecyclingTracker() {
 
         {/* Stats */}
         <section className="mb-5">
-          <Row className="g-4 justify-content-center">
+          <Row className="g-4 ">
             <Col xs={12} sm={6} md={4} lg={3}>
               <Card className="shadow-xl text-center p-3 bg-blue-200 rounded-2xl">
                 <Card.Body>
-                  <p className="text-4xl text-blue-600">🔢</p>
+                  <p className="text-4xl">🔢</p>
                   <p>Number of Recycle</p>
                   <p className="text-2xl font-semibold">{data.length}</p>
                 </Card.Body>
@@ -41,7 +41,7 @@ export default function RecyclingTracker() {
             <Col xs={12} sm={6} md={4} lg={3}>
               <Card className="shadow-xl text-center p-3 bg-blue-200 rounded-2xl">
                 <Card.Body>
-                  <p className="text-4xl text-blue-600">♻️</p>
+                  <p className="text-4xl">♻️</p>
                   <p>Items Recycled</p>
                   <p className="text-2xl font-semibold">{totalQuantity}</p>
                 </Card.Body>
@@ -50,11 +50,20 @@ export default function RecyclingTracker() {
           </Row>
         </section>
         <section className="mb-5">
-          <Row>
-            <Col>
-              <p className="text-2xl text-green-700 mb-3">Badges</p>
-            </Col>
-          </Row>
+          {data.length > 0 ? (
+            <Row>
+              <Col>
+                <p className="text-2xl text-green-700 mb-3">Badges unlocked</p>
+              </Col>
+            </Row>
+          ) : (
+            <Row>
+              <Col>
+                <p className="text-2xl text-green-700 mb-3">Badges still locked </p>
+              </Col>
+            </Row>
+          )}
+
           <Row className="g-4">
             {data.length >= 10 && (
               <Col xs={12} sm={6} md={4} lg={3}>
