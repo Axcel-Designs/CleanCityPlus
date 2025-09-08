@@ -39,7 +39,7 @@ export default async function Home() {
               efforts and learn eco-friendly habits.
             </p>
             <div className="flex justify-center gap-4 my-8">
-              <Link href={"/recycling"} className="font-bold">
+              <Link href={"/recyclingTracker"} className="font-bold">
                 <Button>Start Tracking</Button>
               </Link>
               <Link href={"/waste"} className="font-bold">
