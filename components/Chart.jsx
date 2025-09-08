@@ -19,7 +19,7 @@ export default function Chart() {
     <section className="container mx-auto my-4 p-4 shadow-xl rounded-2xl flex max-md:flex-wrap">
       <ResponsiveContainer width="100%" height={400}>
         <AreaChart data={data}>
-          <XAxis dataKey="item" />
+          <XAxis dataKey="category" />
           <YAxis />
           <CartesianGrid strokeDasharray="5 5 " />
           <Legend />
@@ -33,7 +33,7 @@ export default function Chart() {
           />
           <Area
             type="monotone"
-            dataKey="category"
+            dataKey="item"
             stroke="#82ca9d"
             fill="#82ca9d"
             // stackId="1"
