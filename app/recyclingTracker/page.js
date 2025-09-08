@@ -30,7 +30,7 @@ export default function RecyclingTracker() {
         <section className="mb-5">
           <Row className="g-4 ">
             <Col xs={12} sm={6} md={4} lg={3}>
-              <Card className="shadow-xl text-center p-3 bg-blue-200 rounded-2xl">
+              <Card className="shadow-xl w-[200px] text-center p-3  rounded-2xl">
                 <Card.Body>
                   <p className="text-4xl">🔢</p>
                   <p>Number of Recycle</p>
@@ -39,7 +39,7 @@ export default function RecyclingTracker() {
               </Card>
             </Col>
             <Col xs={12} sm={6} md={4} lg={3}>
-              <Card className="shadow-xl text-center p-3 bg-blue-200 rounded-2xl">
+              <Card className="shadow-xl w-[200px] text-center p-3 rounded-2xl">
                 <Card.Body>
                   <p className="text-4xl">♻️</p>
                   <p>Items Recycled</p>
@@ -59,7 +59,9 @@ export default function RecyclingTracker() {
           ) : (
             <Row>
               <Col>
-                <p className="text-2xl text-green-700 mb-3">Badges still locked </p>
+                <p className="text-2xl text-green-700 mb-3">
+                  Badges still locked{" "}
+                </p>
               </Col>
             </Row>
           )}
