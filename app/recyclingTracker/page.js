@@ -29,8 +29,8 @@ export default function RecyclingTracker() {
         {/* Stats */}
         <section className="mb-5">
           <Row className="g-4 ">
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <Card className="shadow-xl w-[200px] text-center p-3  rounded-2xl">
+            <Col xs={6} sm={6} md={4} lg={3}>
+              <Card className="shadow-xl w-[200px] text-center p-2 rounded-2xl">
                 <Card.Body>
                   <p className="text-4xl">🔢</p>
                   <p>Number of Recycle</p>
@@ -38,8 +38,8 @@ export default function RecyclingTracker() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={12} sm={6} md={4} lg={3}>
-              <Card className="shadow-xl w-[200px] text-center p-3 rounded-2xl">
+            <Col xs={6} sm={6} md={4} lg={3}>
+              <Card className="shadow-xl w-[200px] text-center p-2 rounded-2xl">
                 <Card.Body>
                   <p className="text-4xl">♻️</p>
                   <p>Items Recycled</p>
@@ -53,14 +53,16 @@ export default function RecyclingTracker() {
           {data.length > 0 ? (
             <Row>
               <Col>
-                <p className="text-2xl text-green-700 mb-3">Badges unlocked</p>
+                <p className="text-2xl text-green-700 mb-3 p-4">
+                  Badges unlocked
+                </p>
               </Col>
             </Row>
           ) : (
             <Row>
               <Col>
-                <p className="text-2xl text-green-700 mb-3">
-                  Badges still locked{" "}
+                <p className="text-2xl text-green-700 mb-3 p-4">
+                  Badges still locked
                 </p>
               </Col>
             </Row>
@@ -120,25 +122,29 @@ export default function RecyclingTracker() {
             </Col>
           </Row>
         </section>
-        <section className="mb-5">
-          <Row>
-            <Col>
-              <p className="text-2xl text-green-700 mb-3">Chart</p>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Chart />
-            </Col>
-          </Row>
-        </section>
-        <section className="mb-5">
-          <Row>
-            <Col>
-              <TrackerTable />
-            </Col>
-          </Row>
-        </section>
+        {data.length > 0 && (
+          <>
+            <section className="mb-5">
+              <Row>
+                <Col>
+                  <p className="text-2xl text-green-700 mb-3 p-4">Chart</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col>
+                  <Chart />
+                </Col>
+              </Row>
+            </section>
+            <section className="mb-5">
+              <Row>
+                <Col>
+                  <TrackerTable />
+                </Col>
+              </Row>
+            </section>
+          </>
+        )}
       </Container>
     </main>
   );
