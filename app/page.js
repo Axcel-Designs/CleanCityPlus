@@ -72,7 +72,7 @@ export default function Home() {
           <Row className="g-4 align-items-stretch">
             {stats.map((item, index) => (
               <Col key={index} xs={12} md={4}>
-                <Card className="text-center shadow-sm rounded-2xl h-100">
+                <Card className="text-center h-100">
                   <CardBody>
                     <div className={item.color}>
                       <CardTitle as="h2" className=" font-bold">

@@ -28,7 +28,7 @@ export default function RecyclingTracker() {
 
         {/* Stats */}
         <section className="mb-5">
-          <Row className="g-4 ">
+          <Row className="g-4 flex max-md:flex-col max-md:items-center">
             <Col xs={6} sm={6} md={4} lg={3}>
               <Card className="shadow-xl w-[200px] text-center p-2 rounded-2xl">
                 <Card.Body>
