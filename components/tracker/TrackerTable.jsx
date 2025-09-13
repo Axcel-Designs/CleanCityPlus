@@ -82,7 +82,7 @@ export default function TrackerTable() {
           </Button>
         </div>
       </div>
-      <Table striped="columns" hover bordered variant="secondary">
+      <Table responsive striped="columns" hover bordered variant="secondary">
         <thead>
           <tr>
             <th>#</th>
