@@ -45,7 +45,8 @@ export default function Home() {
             </Col>
             <Col
               xs={12}
-              md={6}
+              md={12}
+              lg={6}
               className="d-flex flex-column justify-content-center p-4"
             >
               <p className="text-6xl font-bold text-green-700">CleanCity+</p>
