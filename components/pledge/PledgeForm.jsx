@@ -42,14 +42,14 @@ export default function PledgeForm({ onAddPledge }) {
         </em>
         <form autoComplete="on" onSubmit={handleSubmit}>
           <Input
-            holder={"Enter your full name"}
+            holder={"Enter full name"}
             label={"Full Name"}
             value={formData.name}
             change={dataForm}
             name={"name"}
           />
           <Input
-            holder={"Enter your email address"}
+            holder={"Enter email address"}
             label={"Email Address"}
             value={formData.email}
             change={dataForm}

@@ -39,7 +39,6 @@ export default function TrackerForm() {
     <section className="bg-white container mx-auto my-4 p-4 shadow-xl rounded-2xl">
       <p className="text-2xl text-green-700">Add Recycling Entry</p>
       <form onSubmit={handleSubmit} autoComplete="on">
-        <div className="flex flex-wrap justify-between items-center gap-x-4 gap-y-2">
           <select
             className="ring px-4 py-2 bg-gray-100 outline"
             name="category"
@@ -54,7 +53,7 @@ export default function TrackerForm() {
           </select>
           <Input
             label={"Item Description"}
-            holder={"Enter item description"}
+            holder={"Enter description"}
             value={formData.item}
             change={formChange}
             name={"item"}
@@ -67,7 +66,6 @@ export default function TrackerForm() {
             change={formChange}
             name={"qty"}
           />
-        </div>
         <ButtonGrn type="submit">{formData.id ? "Update" : "Add"}</ButtonGrn>
       </form>
       <div className="my-4">
