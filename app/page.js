@@ -69,10 +69,10 @@ export default function Home() {
       {/* Stats Section */}
       <section className="mb-16">
         <Container>
-          <Row className="g-4 align-items-stretch">
+          <Row className="g-4 align-items-stretchu">
             {stats.map((item, index) => (
               <Col key={index} xs={12} md={4}>
-                <Card className="text-center h-100">
+                <Card className="text-center" style={{ height: '150px' }}>
                   <CardBody>
                     <div className={item.color}>
                       <CardTitle as="h2" className=" font-bold">
