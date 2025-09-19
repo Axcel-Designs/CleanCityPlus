@@ -28,8 +28,8 @@ export default function RecyclingTracker() {
 
         {/* Stats */}
         <section className="mb-5">
-          <Row className="g-4 flex max-md:flex-col max-md:items-center">
-            <Col xs={6} sm={6} md={4} lg={3}>
+          <Row className="g-4 flex max-md:flex-col max-md:items-center max-md:justify-center">
+            <Col xs={11} sm={6} md={4} lg={3}>
               <Card className="shadow-xl w-[200px] text-center p-2 rounded-2xl">
                 <Card.Body>
                   <p className="text-4xl">🔢</p>
@@ -38,7 +38,7 @@ export default function RecyclingTracker() {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={6} sm={6} md={4} lg={3}>
+            <Col xs={11} sm={6} md={4} lg={3}>
               <Card className="shadow-xl w-[200px] text-center p-2 rounded-2xl">
                 <Card.Body>
                   <p className="text-4xl">♻️</p>
