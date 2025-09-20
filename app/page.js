@@ -35,7 +35,7 @@ const stats = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="">
       {/* Hero Section */}
       <section className="pb-20 text-center ">
         <Container fluid>
@@ -50,7 +50,7 @@ export default function Home() {
               className="d-flex flex-column justify-content-center p-4"
             >
               <p className="text-6xl font-bold text-green-700">CleanCity+</p>
-              <p className="mt-4 font-bold text-lg text-gray-700 mx-auto">
+              <p className="mt-4 font-bold text-lg text-gray-700 mx-auto dark:text-gray-400">
                 Join the movement to keep our planet clean! Track your recycling
                 efforts and learn eco-friendly habits.
               </p>

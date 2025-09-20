@@ -30,7 +30,7 @@ const recyclingFacts = [
 
 export default recyclingFacts;
 
-// export const categories = [
+// export const wasteCat = [
 //   {
 //     name: "Paper",
 //     color: "#3B82F6",

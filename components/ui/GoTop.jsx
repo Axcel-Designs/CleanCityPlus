@@ -1,16 +1,12 @@
 "use client";
-import useHoverHook from "@/hooks/hoverHook";
-import React from "react";
 import { FaAnglesUp } from "react-icons/fa6";
 
 export default function GoTop() {
-  const { active, handleHover } = useHoverHook();
   return (
     <section className="fixed bottom-20 flex justify-end cursor-pointer right-8">
       <div
-        {...handleHover}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className={active ? "text-gray-600" : "text-green-950"}
+        className="text-green-950 dark:text-green-200"
       >
         <FaAnglesUp className="text-2xl" />
       </div>

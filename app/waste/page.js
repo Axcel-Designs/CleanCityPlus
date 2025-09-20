@@ -13,10 +13,10 @@ import { wasteCat } from "@/utils/facts";
 
 export default function WasteCategories() {
   return (
-    <main className="bg-gray-50">
+    <main className="bg-gray-50 dark:bg-gray-900 dark:text-red-200">
       <Container className="py-20">
         {/* Section Heading */}
-        <section className="text-center text-gray-700 mb-4">
+        <section className="text-center text-gray-700 dark:text-gray-400 mb-4">
           <Row className="gy-2">
             <Col>
               <p className="text-6xl text-green-700">Waste Categories</p>
@@ -40,7 +40,7 @@ export default function WasteCategories() {
                 <Col xs={12} key={waste.id}>
                   <AccordionItem
                     eventKey={i.toString()}
-                    className="bg-white rounded-2xl"
+                    className="bg-white dark:bg-gray-600 rounded-2xl"
                   >
                     <AccordionHeader>
                       <div className={`${waste.color} text-2xl flex gap-2`}>

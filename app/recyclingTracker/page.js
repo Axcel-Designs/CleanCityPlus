@@ -12,7 +12,7 @@ export default function RecyclingTracker() {
   const totalQuantity = data.reduce((acc, crr) => acc + Number(crr.qty), 0);
 
   return (
-    <main className="bg-gray-50">
+    <main className="bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
       <Container className="py-20">
         <section className="text-center mb-5">
           <Row>
@@ -51,7 +51,7 @@ export default function RecyclingTracker() {
         </section>
         <section className="mb-5">
           {data.length > 0 ? (
-            <Row>
+            <Row className="">
               <Col>
                 <p className="text-2xl text-green-700 mb-3 p-4">
                   Badges unlocked
@@ -71,7 +71,7 @@ export default function RecyclingTracker() {
           <Row className="g-4">
             {data.length >= 100 && (
               <Col xs={12} sm={6} md={4} lg={3}>
-                <Card className="shadow-xl text-center p-3 rounded-xl">
+                <Card className="shadow-xl text-center p-3 rounded-xl ">
                   <Card.Body>
                     <dt className="text-4xl">🏆</dt>
                     <b className="text-blue-600">Legend Recycler</b>
@@ -104,7 +104,7 @@ export default function RecyclingTracker() {
             )}
             {data.length > 0 && (
               <Col xs={12} sm={6} md={4} lg={3}>
-                <Card className="shadow-xl text-center p-3 rounded-xl">
+                <Card className="shadow-xl text-center p-3 rounded-xl ">
                   <Card.Body>
                     <dt className="text-4xl">🎉</dt>
                     <b className="text-red-600">Getting Started</b>
@@ -124,7 +124,7 @@ export default function RecyclingTracker() {
         </section>
         {data.length > 0 && (
           <>
-            <section className="mb-5">
+            <section className="mb-5 ">
               <Row>
                 <Col>
                   <p className="text-2xl text-green-700 mb-3 p-4">Chart</p>

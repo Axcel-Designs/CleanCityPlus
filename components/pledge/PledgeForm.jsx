@@ -32,7 +32,7 @@ export default function PledgeForm({ onAddPledge }) {
 
   return (
     <>
-      <div className="bg-white ring-1 p-4 shadow-xl/20 rounded-2xl">
+      <div className=" ring-1 p-4 shadow-xl/20 rounded-2xl bg-gray-50 dark:bg-black/50 dark:text-gray-400">
         <p className="text-2xl text-green-700">
           Make Your Environmental Pledge
         </p>
@@ -64,7 +64,7 @@ export default function PledgeForm({ onAddPledge }) {
               value={formData.pledge}
               onChange={dataForm}
               name="pledge"
-              className="bg-gray-100 w-full ring hover:ring-green-700 outline-0 resize-none p-2"
+              className="bg-gray-100 w-full ring hover:ring-green-700 outline-0 resize-none p-2 dark:text-gray-800   "
               placeholder="I pledge to... (e.g., reduce plastic use, recycle more, use public transport, etc.)"
               rows={4}
               required

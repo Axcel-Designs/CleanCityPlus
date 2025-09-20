@@ -2,7 +2,15 @@
 import useShow from "@/hooks/isShowHook";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaRecycle, FaHome, FaBars, FaTimes } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import {
+  FaRecycle,
+  FaHome,
+  FaBars,
+  FaTimes,
+  FaMoon,
+  FaSun,
+} from "react-icons/fa";
 import { FaHandHoldingDollar, FaTableList } from "react-icons/fa6";
 
 const navBar = [
@@ -30,15 +38,18 @@ const navBar = [
 
 export function Navbar() {
   const path = usePathname();
+
   return (
     <>
       {navBar.map((menu, i) => (
         <Link
           href={menu.path}
           key={i}
-          className={` p-2 ${
+          className={`p-2 ${
             menu.path === path
-              ? "font-bold text-green-900 border-b-2 border-red-600" : "" }`}
+              ? "font-bold text-green-900 border-b-2 border-red-600"
+              : ""
+          }`}
         >
           <div className="flex items-center gap-2 text-green-700">
             {menu.icon}
@@ -52,10 +63,21 @@ export function Navbar() {
 
 export default function Header() {
   const { isShow, tggleActive } = useShow();
+  const [dark, setDark] = useState(false);
+
+  const tggleDark = () => {
+    setDark(!dark);
+  };
+
+  useEffect(() => {
+    dark
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+  }, [dark]);
 
   return (
     <>
-      <header className="flex items-center justify-between p-4 gap-2 bg-white shadow/20">
+      <header className="flex items-center justify-between p-4 gap-2 bg-gray-50 dark:bg-gray-900 dark:text-gray-200 shadow/20 z-40">
         <div className="flex items-center">
           <div className="rounded-full flex justify-around items-center text-center border-gray-400">
             <Link href={"/"} className="no-underline">
@@ -63,14 +85,19 @@ export default function Header() {
             </Link>
           </div>
         </div>
-        <nav className="hidden md:flex items-center gap-4">
-          <Navbar />
-        </nav>
-        <div
-          className="point hidden max-md:flex text-2xl text-green-950"
-          onClick={tggleActive}
-        >
-          {isShow ? <FaTimes /> : <FaBars />}
+        <div className="flex items-center gap-2">
+          <nav className="hidden md:flex items-center gap-4">
+            <Navbar />
+          </nav>
+          <div onClick={tggleDark} className="rounded-lg point text-xl">
+            {!dark ? <FaMoon /> : <FaSun />}
+          </div>
+          <div
+            className="point hidden max-md:flex text-2xl text-green-950 dark:text-green-200"
+            onClick={tggleActive}
+          >
+            {isShow ? <FaTimes /> : <FaBars />}
+          </div>
         </div>
       </header>
       <div
@@ -80,7 +107,7 @@ export default function Header() {
       >
         {isShow && (
           <nav
-            className="md:hidden flex justify-end p-2 fixed bg-white top-21 right-0 h-full"
+            className="md:hidden flex justify-end p-2 fixed top-21 right-0 h-full  bg-gray-50 dark:bg-gray-900 dark:text-gray-200"
             onClick={tggleActive}
           >
             <div className="flex flex-col gap-4 mr-4">

@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 a {
   list-style: none;
   text-decoration: none !important;

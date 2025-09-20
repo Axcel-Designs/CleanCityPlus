@@ -23,10 +23,10 @@ export default function PledgePage() {
   }
 
   return (
-    <main className="bg-gray-50 h-full">
+    <main className="bg-gray-50 h-full dark:bg-gray-900 dark:text-gray-200">
       <Container className="py-20">
         <section className="text-center text-gray-800 mb-4">
-          <Row className="gy-2">
+          <Row className="gy-2 dark:text-gray-400">
             <Col>
               <p className="text-6xl text-green-700">Pledge</p>
               <em>

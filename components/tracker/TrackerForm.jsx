@@ -36,36 +36,36 @@ export default function TrackerForm() {
   }
 
   return (
-    <section className="bg-white container mx-auto my-4 p-4 shadow-xl rounded-2xl">
+    <section className="bg-gray-50 dark:bg-black/50 dark:text-gray-400 container mx-auto my-4 p-4 shadow-xl rounded-2xl">
       <p className="text-2xl text-green-700">Add Recycling Entry</p>
       <form onSubmit={handleSubmit} autoComplete="on">
-          <select
-            className="ring px-4 py-2 bg-gray-100 outline"
-            name="category"
-            value={formData.category}
-            onChange={formChange}
-          >
-            {wasteCat.map((category, i) => (
-              <option key={i} value={category.id}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-          <Input
-            label={"Item Description"}
-            holder={"Enter description"}
-            value={formData.item}
-            change={formChange}
-            name={"item"}
-          />
-          <Input
-            label={"Quantity"}
-            holder={"Enter quantity"}
-            type="number"
-            value={formData.qty}
-            change={formChange}
-            name={"qty"}
-          />
+        <select
+          className="ring px-4 py-2 bg-gray-100 outline dark:text-gray-800"
+          name="category"
+          value={formData.category}
+          onChange={formChange}
+        >
+          {wasteCat.map((category, i) => (
+            <option key={i} value={category.id}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+        <Input
+          label={"Item Description"}
+          holder={"Enter description"}
+          value={formData.item}
+          change={formChange}
+          name={"item"}
+        />
+        <Input
+          label={"Quantity"}
+          holder={"Enter quantity"}
+          type="number"
+          value={formData.qty}
+          change={formChange}
+          name={"qty"}
+        />
         <ButtonGrn type="submit">{formData.id ? "Update" : "Add"}</ButtonGrn>
       </form>
       <div className="my-4">

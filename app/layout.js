@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/cleanCity.png" />
       </head>
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
           <div className="sticky top-0 w-full z-40">
             <Header />
           </div>
-          <div className="grow overflow-x-hidden inset-shadow-2xs">
+          <div className="grow overflow-x-hidden inset-shadow-2xs dark:bg-gray-900">
             {children}
           </div>
           <GoTop />
