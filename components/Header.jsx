@@ -77,7 +77,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex items-center justify-between p-4 gap-2 bg-gray-50 dark:bg-gray-900 dark:text-gray-200 shadow/20 z-40">
+      <header className="flex items-center justify-between p-4 gap-2 bg-white/98 dark:bg-gray-900/98 dark:text-gray-200 shadow/20 z-40">
         <div className="flex items-center">
           <div className="rounded-full flex justify-around items-center text-center border-gray-400">
             <Link href={"/"} className="no-underline">
@@ -86,10 +86,13 @@ export default function Header() {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <nav className="hidden md:flex items-center gap-4">
+          <nav className="hidden md:flex items-center gap-2">
             <Navbar />
           </nav>
-          <div onClick={tggleDark} className="rounded-lg point text-xl">
+          <div
+            onClick={tggleDark}
+            className="rounded-lg point text-xl text-green-900 dark:text-green-200"
+          >
             {!dark ? <FaMoon /> : <FaSun />}
           </div>
           <div
