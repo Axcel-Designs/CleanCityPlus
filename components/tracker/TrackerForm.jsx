@@ -36,7 +36,7 @@ export default function TrackerForm() {
   }
 
   return (
-    <section className="bg-gray-50 dark:bg-black/50 dark:text-gray-400 container mx-auto my-4 p-4 shadow-xl rounded-2xl">
+    <section className="ring bg-gray-50 dark:bg-black/50 dark:text-gray-400 container mx-auto my-4 p-4 shadow-xl rounded-2xl">
       <p className="text-2xl text-green-700">Add Recycling Entry</p>
       <form onSubmit={handleSubmit} autoComplete="on">
         <select
