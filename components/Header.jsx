@@ -3,14 +3,8 @@ import useShow from "@/hooks/isShowHook";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import {
-  FaRecycle,
-  FaHome,
-  FaBars,
-  FaTimes,
-  FaMoon,
-  FaSun,
-} from "react-icons/fa";
+import { MdModeNight } from "react-icons/md";
+import { FaRecycle, FaHome, FaBars, FaTimes, FaSun } from "react-icons/fa";
 import { FaHandHoldingDollar, FaTableList } from "react-icons/fa6";
 
 const navBar = [
@@ -93,7 +87,7 @@ export default function Header() {
             onClick={tggleDark}
             className="rounded-lg point text-xl text-green-900 dark:text-green-200"
           >
-            {!dark ? <FaMoon /> : <FaSun />}
+            {!dark ? <MdModeNight /> : <FaSun />}
           </div>
           <div
             className="point hidden max-md:flex text-2xl text-green-950 dark:text-green-200"
